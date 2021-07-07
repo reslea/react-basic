@@ -5,9 +5,10 @@ function App() {
 
   useEffect(() => {
     fetch("https://rembo-test.herokuapp.com/api/hello/message")
-      .then(r => setData(r.json()))
+      .then(async (r) => setData(await r.json()))
   }, []);
 
+  console.log(data);
   return (
     <div className="App">
       <h1>{data?.message}</h1>
